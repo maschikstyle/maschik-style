@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maschik Style · Reserva tu hora</title>
+<meta name="description" content="Reserva tu hora en Maschik Style: cortes, color, mechas, tratamientos y alisado. Elige servicio, día y hora, y confirma por WhatsApp.">
+<meta property="og:title" content="Maschik Style · Reserva tu hora">
+<meta property="og:description" content="Elige tu servicio, el día y la hora. Te confirmamos por WhatsApp.">
+<meta name="theme-color" content="#12100D">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Maschik Style">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F6F3EC; --surface:#FFFFFF; --sunk:#EFEAE0; --ink:#16130E; --muted:#6E665A; --line:#E3DCCD;
+  --accent:#8A6516; --accent-ink:#FFFFFF; --accent-soft:#F3E8CC;
+  --hero-bg:#12100D; --hero-ink:#F1D78F; --hero-muted:#CBBFA4;
+  --gold:linear-gradient(135deg,#8C5E16 0%,#F0D27A 45%,#B07A23 100%);
+  --wa:#1E8E4E;
+  --f-display:"Bodoni Moda","Didot",Georgia,serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0E0D0B; --surface:#1A1814; --sunk:#23201A; --ink:#F3ECDD; --muted:#A89F8E; --line:#332E24;
+  --accent:#DDB862; --accent-ink:#17130A; --accent-soft:#2E2614; color-scheme:dark}}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+button,input,select,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+img{max-width:100%}
+.wrap{max-width:560px;margin:0 auto;padding-block:0 110px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;gap:10px;padding-block:14px 10px;border-bottom:1px solid var(--line)}
+.logo{width:42px;height:42px;border-radius:50%;object-fit:cover;flex:0 0 auto;box-shadow:0 0 0 1.5px #C9A24A}
+.brand{font-family:var(--f-display);font-style:italic;font-size:24px;font-weight:500;line-height:1.1;min-width:0}
+.brand small{display:block;font-family:var(--f-body);font-style:normal;font-size:12px;color:var(--muted)}
+main{display:flex;flex-direction:column;gap:18px;padding-top:16px}
+h2{font-family:var(--f-display);font-weight:500;font-size:26px;margin:0;line-height:1.15;text-wrap:balance}
+h3{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:700}
+p{margin:0}
+.sec{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.muted{color:var(--muted)} .small{font-size:13px}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.hero{background:radial-gradient(120% 140% at 85% 50%,#2A2318 0%,var(--hero-bg) 60%);color:var(--hero-ink);border-radius:18px;padding:20px 124px 20px 18px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden;min-height:132px;justify-content:center}
+.hero::after{content:"";position:absolute;inset:0;border-radius:18px;padding:1.5px;background:var(--gold);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.hero h2{font-size:30px;font-style:italic;color:var(--hero-ink)}
+.hero p{color:var(--hero-muted)}
+.hero img{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:104px;height:104px;border-radius:50%;object-fit:cover}
+@media (max-width:360px){.hero{padding-right:18px}.hero img{display:none}}
+.step{display:flex;align-items:baseline;gap:10px}
+.step b{font-family:var(--f-display);font-size:22px;color:var(--accent);font-weight:700;min-width:18px}
+.step span{font-weight:700;font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 12px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:2px;min-width:0}
+.chip .n{font-weight:600}
+.chip .d{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.day{flex:0 0 auto;width:58px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:8px 0;display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer}
+.day .w{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+.day .n{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.day .m{font-size:11px;color:var(--muted)}
+.day[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.day[aria-pressed="true"] .w,.day[aria-pressed="true"] .m{color:var(--accent-ink)}
+.day:disabled{opacity:.38;cursor:not-allowed}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));gap:8px}
+.slot{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 0;font-weight:600;cursor:pointer;font-variant-numeric:tabular-nums}
+.slot[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+label.f{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600;color:var(--muted)}
+input,textarea{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 12px;width:100%;min-width:0;font-size:16px;color:var(--ink)}
+textarea{resize:vertical;min-height:70px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:13px 16px;font-weight:700;cursor:pointer;background:var(--accent);color:var(--accent-ink);text-decoration:none;text-align:center}
+.btn.block{width:100%}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+.btn.sm{padding:8px 11px;font-size:13px;border-radius:10px}
+.btn.wa{background:var(--wa);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.empty{text-align:center;padding:22px 14px;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
+.summary{position:sticky;bottom:calc(74px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-variant-numeric:tabular-nums;z-index:3}
+.summary b{font-size:18px}
+.tbl{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.tbl td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl td:last-child{text-align:right;padding-left:10px;white-space:nowrap}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));display:flex;justify-content:center}
+nav.tabs .in{display:flex;width:100%;max-width:560px}
+nav.tabs button{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:600;color:var(--muted);padding:6px 4px;cursor:pointer;flex:1}
+nav.tabs svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7}
+nav.tabs button[aria-current="page"]{color:var(--accent)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;z-index:30;font-weight:600;font-size:14px}
+.ig{color:var(--accent);font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><img class="logo" src="logo.jpg" alt=""><div class="brand" id="brand">Maschik Style<small>Peluquería y estilismo</small></div></header>
+  <main id="main"><div class="empty">Cargando…</div></main>
+</div>
+<nav class="tabs" id="nav"></nav>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="config.js"></script>
+<script>
+(function(){
+const C=window.CONFIG;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clp=n=>'$'+Math.round(Number(n)||0).toLocaleString('es-CL');
+const pr=n=>Number(n)>0?(C.preciosDesde?'desde ':'')+clp(n):'Consultar precio';
+const totTxt=(tot,ids)=>{const q=ids.some(id=>!(svc(id).precio>0));return tot>0?pr(tot)+(q?' + por consultar':''):'Por consultar'};
+const pad=n=>String(n).padStart(2,'0');
+const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const pISO=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+const addDays=(s,n)=>{const d=pISO(s);d.setDate(d.getDate()+n);return iso(d)};
+const toMin=h=>{const[a,b]=String(h).split(':').map(Number);return a*60+(b||0)};
+const toHM=m=>pad(Math.floor(m/60))+':'+pad(m%60);
+const today=()=>iso(new Date());
+const DIAS=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],DIASL=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const fLarga=s=>{const d=pISO(s);return `${DIASL[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}`};
+const digits=p=>{let d=String(p||'').replace(/\D/g,'');if(d.length===9&&d[0]==='9')d='56'+d;else if(d.length===8)d='569'+d;return d};
+const svc=id=>C.servicios.find(s=>s.id===id);
+const IC={cal:'<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>',
+ list:'<svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>',
+ pin:'<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'};
+
+const S={tab:(location.hash.slice(1)||'reservar'),b:{svcs:[],fecha:null,hora:null,nombre:'',tel:'',nota:'',listo:false}};
+if(!['reservar','servicios','contacto'].includes(S.tab))S.tab='reservar';
+try{const g=JSON.parse(localStorage.getItem('ms-datos')||'{}');S.b.nombre=g.nombre||'';S.b.tel=g.tel||''}catch(e){}
+
+const horario=f=>C.horario[pISO(f).getDay()]||null;
+function totals(ids){let dur=0,tot=0;ids.forEach(id=>{const s=svc(id);if(s){dur+=s.duracion;tot+=s.precio}});return{dur:Math.max(dur,C.intervalo),tot}}
+function slots(f,dur){const h=horario(f);if(!h)return[];const a=toMin(h.abre),c=toMin(h.cierra),out=[];let min=0;
+ if(f===today()){const n=new Date();min=n.getHours()*60+n.getMinutes()+60}
+ for(let t=a;t+dur<=c;t+=C.intervalo)if(t>=min)out.push(t);return out}
+function groups(){const g={};C.servicios.forEach(s=>(g[s.cat||'Otros']=g[s.cat||'Otros']||[]).push(s));return g}
+const ready=()=>{const b=S.b;return b.svcs.length&&b.fecha&&b.hora!=null&&b.nombre.trim().length>1&&digits(b.tel).length>=11};
+
+function render(){
+ const a=document.activeElement,aid=a&&a.id,sel=a&&'selectionStart' in a?[a.selectionStart,a.selectionEnd]:null;
+ $('#brand').innerHTML=`${esc(C.nombre)}<small>${esc(C.frase)}</small>`;
+ $('#nav').innerHTML=`<div class="in">${[['reservar','Reservar',IC.cal],['servicios','Servicios',IC.list],['contacto','Contacto',IC.pin]].map(([k,l,i])=>`<button data-act="tab" data-k="${k}" ${k===S.tab?'aria-current="page"':''}>${i}<span>${l}</span></button>`).join('')}</div>`;
+ $('#main').innerHTML=S.tab==='servicios'?vServicios():S.tab==='contacto'?vContacto():(S.b.listo?vListo():vReservar());
+ if(aid){const e=document.getElementById(aid);if(e){e.focus({preventScroll:true});if(sel&&e.setSelectionRange)try{e.setSelectionRange(sel[0],sel[1])}catch(x){}}}
+}
+function vReservar(){const b=S.b,g=groups(),{dur,tot}=totals(b.svcs),t=today();
+ const days=[];for(let i=0;i<C.diasVisibles;i++)days.push(addDays(t,i));
+ const sl=b.fecha&&b.svcs.length?slots(b.fecha,dur):[];
+ return `<section class="hero"><img src="logo.jpg" alt="Logo ${esc(C.nombre)}"><h2>Reserva tu hora</h2><p>Elige tus servicios, el día y la hora. Te confirmamos por WhatsApp.</p></section>
+ <section class="sec"><div class="step"><b>1</b><span>¿Qué te quieres hacer?</span></div>
+ ${Object.keys(g).map(c=>`<div><h3>${esc(c)}</h3><div class="chips">${g[c].map(s=>`<button class="chip" data-act="svc" data-id="${esc(s.id)}" aria-pressed="${b.svcs.includes(s.id)}"><span class="n">${esc(s.nombre)}</span><span class="d">${pr(s.precio)}</span></button>`).join('')}</div></div>`).join('')}</section>
+ <section class="sec"><div class="step"><b>2</b><span>Elige el día</span></div>
+ <p class="small muted">Días de atención: ${[1,2,3,4,5,6,0].filter(d=>C.horario[d]).map(d=>DIASL[d].toLowerCase()).join(', ').replace(/, ([^,]*)$/,' y $1')}.</p>
+ <div class="strip">${days.map(f=>{const d=pISO(f);return `<button class="day" data-act="dia" data-f="${f}" ${horario(f)?'':'disabled'} aria-pressed="${b.fecha===f}"><span class="w">${f===t?'Hoy':f===addDays(t,1)?'Mañ':DIAS[d.getDay()]}</span><span class="n">${d.getDate()}</span><span class="m">${MESES[d.getMonth()].slice(0,3)}</span></button>`}).join('')}</div></section>
+ <section class="sec"><div class="step"><b>3</b><span>Elige la hora</span></div>
+ ${!b.svcs.length?'<div class="empty">Primero elige al menos un servicio.</div>':!b.fecha?'<div class="empty">Elige un día para ver los horarios.</div>':sl.length?`<div class="slots">${sl.map(x=>`<button class="slot" data-act="hora" data-t="${x}" aria-pressed="${b.hora===x}">${toHM(x)}</button>`).join('')}</div><p class="small muted">Si la hora ya está tomada, te ofreceremos otra por WhatsApp.</p>`:`<div class="empty">No quedan horarios para ese día. Prueba con otro.</div>`}</section>
+ <section class="sec"><div class="step"><b>4</b><span>Tus datos</span></div>
+ <label class="f">Nombre y apellido<input id="bk-nombre" autocomplete="name" value="${esc(b.nombre)}" placeholder="Ej: Camila Soto"></label>
+ <label class="f">WhatsApp<input id="bk-tel" type="tel" inputmode="tel" autocomplete="tel" value="${esc(b.tel)}" placeholder="+56 9 1234 5678"></label>
+ <label class="f">Comentario (opcional)<textarea id="bk-nota" placeholder="Ej: pelo largo, quiero un tono más claro">${esc(b.nota)}</textarea></label>
+ <button class="btn block" data-act="ok" ${ready()?'':'disabled'}>Solicitar reserva</button>
+ ${ready()?'':'<p class="small muted">Completa los 4 pasos. El WhatsApp debe tener 9 dígitos (ej: 9 1234 5678).</p>'}</section>
+ ${b.svcs.length?`<div class="summary"><span>${b.svcs.length} servicio${b.svcs.length>1?'s':''}</span><b>${totTxt(tot,b.svcs)}</b></div>`:''}`}
+function msg(){const b=S.b,{dur,tot}=totals(b.svcs),cl=s=>String(s).replace(/[|\n]/g,' ').trim();
+ return `Hola ${C.nombre}, quiero reservar una hora:\n\n• Servicios: ${b.svcs.map(id=>svc(id).nombre).join(', ')}\n• Día: ${fLarga(b.fecha)}\n• Hora: ${toHM(b.hora)}\n• Total estimado: ${totTxt(tot,b.svcs)}\n• Nombre: ${cl(b.nombre)}\n• WhatsApp: ${cl(b.tel)}${b.nota.trim()?`\n• Comentario: ${cl(b.nota)}`:''}\n\nCódigo: RSV|${b.fecha}|${toHM(b.hora)}|${b.svcs.join(',')}|${cl(b.nombre)}|${digits(b.tel)}`}
+function vListo(){const b=S.b,{tot}=totals(b.svcs);
+ return `<section class="hero"><img src="logo.jpg" alt=""><h2>¡Casi lista!</h2><p>Envía tu solicitud por WhatsApp para que te confirmemos la hora.</p></section>
+ <section class="card sec"><table class="tbl"><tr><td>Día</td><td>${esc(fLarga(b.fecha))}</td></tr><tr><td>Hora</td><td>${toHM(b.hora)}</td></tr>
+ ${b.svcs.map(id=>`<tr><td>${esc(svc(id).nombre)}</td><td>${pr(svc(id).precio)}</td></tr>`).join('')}<tr><td><b>Total estimado</b></td><td><b>${totTxt(tot,b.svcs)}</b></td></tr></table>
+ <a class="btn block wa" href="https://wa.me/${digits(C.whatsapp)}?text=${encodeURIComponent(msg())}" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+ <p class="small muted">El precio final depende del largo y el estado de tu cabello. Tu hora queda reservada cuando te respondamos confirmando.</p></section>
+ <button class="btn ghost block" data-act="otra">Hacer otra reserva</button>`}
+function vServicios(){const g=groups();return `<section class="sec"><h2>Servicios y precios</h2><p class="muted">Precios de referencia; el valor final depende del largo y el estado del cabello.</p></section>
+ ${Object.keys(g).map(c=>`<section class="card"><h3>${esc(c)}</h3><table class="tbl">${g[c].map(s=>`<tr><td>${esc(s.nombre)}</td><td>${s.precio>0?pr(s.precio):`<a class="ig" href="https://wa.me/${digits(C.whatsapp)}?text=${encodeURIComponent(`Hola ${C.nombre}, quiero consultar el precio de: ${s.nombre}`)}" target="_blank" rel="noopener">Consultar</a>`}</td></tr>`).join('')}</table></section>`).join('')}
+ <button class="btn block" data-act="tab" data-k="reservar">Reservar ahora</button>`}
+function vContacto(){const w=digits(C.whatsapp);return `<section class="sec"><h2>Contacto</h2>${C.estilista?`<p class="muted">Atiende ${esc(C.estilista)}</p>`:''}</section>
+ <section class="card sec">${C.direccion?`<div><h3>Dirección</h3><div>${esc(C.direccion)}</div></div>`:''}
+ <div><h3>WhatsApp</h3><div class="row"><b style="user-select:all">+${w.slice(0,2)} ${w.slice(2,3)} ${w.slice(3,7)} ${w.slice(7)}</b><a class="btn wa sm" href="https://wa.me/${w}" target="_blank" rel="noopener">Escribir</a></div></div>
+ <div><h3>Instagram</h3><a class="ig" href="https://instagram.com/${esc(C.instagram)}" target="_blank" rel="noopener">@${esc(C.instagram)}</a></div></section>
+ <section class="card"><h3>Horario</h3><table class="tbl">${[1,2,3,4,5,6,0].map(d=>{const x=C.horario[d];return `<tr><td>${DIASL[d]}</td><td>${x?`${x.abre} – ${x.cierra}`:'<span class="muted">Cerrado</span>'}</td></tr>`}).join('')}</table></section>
+ <p class="small muted">Tip: abre esta página en tu teléfono y elige “Agregar a pantalla de inicio” para tenerla como app.</p>`}
+
+const A={tab(t){S.tab=t.dataset.k;history.replaceState(null,'','#'+S.tab);render();scrollTo(0,0)},
+ svc(t){const id=t.dataset.id,b=S.b;b.svcs=b.svcs.includes(id)?b.svcs.filter(x=>x!==id):[...b.svcs,id];b.hora=null;render()},
+ dia(t){S.b.fecha=t.dataset.f;S.b.hora=null;render()}, hora(t){S.b.hora=Number(t.dataset.t);render()},
+ ok(){try{localStorage.setItem('ms-datos',JSON.stringify({nombre:S.b.nombre,tel:S.b.tel}))}catch(e){}S.b.listo=true;render();scrollTo(0,0)},
+ otra(){Object.assign(S.b,{svcs:[],fecha:null,hora:null,nota:'',listo:false});render()}};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-act]');if(t&&A[t.dataset.act]){e.preventDefault();A[t.dataset.act](t)}});
+document.addEventListener('input',e=>{const id=e.target.id;if(!id||!id.startsWith('bk-'))return;const was=ready();S.b[id.slice(3)]=e.target.value;if(!!was!==!!ready())render()});
+render();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+})();
+</script>
+</body>
+</html>
